@@ -1,11 +1,9 @@
 <navbar></navbar>
 
-<div class="card">Testing</div>
+<div class="card">
+  Testing
+  <button type="button" name="dots" (click)="toggleDots()">Toggle</button>
+</div>
 
-<div id="dots">
-  <div class="pulsing dot" id="dot_1"></div>
-  <div class="pulsing dot" id="dot_2"></div>
-</div>
-<div id="arrow_head">
-  <div class="pulsing arrow" id="arrow"></div>
-</div>
+<dots [arrow]="false" [active]="dotsActive"></dots>
+<dots [arrow]="true" [active]="dotsActive"></dots>

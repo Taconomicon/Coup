@@ -25,8 +25,10 @@
 
     border: 7px solid azure;
     border-left: 0px;
+    border-top: 0px;
     border-radius: 0px 15px 0px 15px;
-    border-color: azure azure #1E90FF azure;
+    // border-color: azure azure #1E90FF azure;
+    border-color: azure azure azure azure;
 
     height: 15px;
     width: 15px;
@@ -34,24 +36,26 @@
 
   .icon:hover {
     background: #00BFFF;
-    border-radius: 0px 20px 0px 20px;
-
     box-shadow:0 0 50px #00BFFF;
     -moz-box-shadow: 0 0 50px #00BFFF;
     -webkit-box-shadow:0 0 50px #00BFFF;
-
+    border-radius: 0px 20px 0px 20px;
     padding: 5px;
   }
 }
 
 .navbar-tag {
+  transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+
   width: 25%;
   font-size: $font-heading;
 
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-right: 15px;
 }
 
 .navbar-center {

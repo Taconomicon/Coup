@@ -1,0 +1,8 @@
+<div id="dots">
+  <div class="pulsing dot" [id]="elementIds[0]"></div>
+  <div class="pulsing dot" [id]="elementIds[1]"></div>
+  <div *ngIf="!_arrow" class="pulsing dot" [id]="elementIds[2]"></div>
+</div>
+<div *ngIf="_arrow" id="arrow_head">
+  <div class="pulsing arrow" [id]="elementIds[2]"></div>
+</div>

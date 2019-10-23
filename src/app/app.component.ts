@@ -7,13 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'Coup';
+  dotsActive = false;
 
-  ngOnInit() {
-    // Spin up those dots
-    setTimeout(function () {
-      document.getElementById("dot_1").classList.toggle("fade1")
-      document.getElementById("dot_2").classList.toggle("fade2")
-      document.getElementById("arrow").classList.toggle("fade3")
-    }, 7500);
+  ngOnInit() {}
+
+  toggleDots() {
+    this.dotsActive = !this.dotsActive;
   }
 }
