@@ -1,0 +1,42 @@
+@import "src/styles.scss";
+@import url(//fonts.googleapis.com/css?family=Quicksand);
+
+.user-display {
+  display: flex;
+}
+
+.user-icon {
+  transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+
+  // Default image
+  border-radius: 30px;
+  background-image: url("src/assets/images/avatars/avatar.png");
+
+  img {
+    border-radius: 30px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: $padding-small;
+}
+
+.user-icon:hover {
+  box-shadow:0 0 50px azure;
+  -moz-box-shadow: 0 0 50px azure;
+  -webkit-box-shadow:0 0 50px azure;
+}
+
+.user-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-menu {
+}

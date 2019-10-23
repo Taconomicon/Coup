@@ -1,1 +1,233 @@
-/* You can add global styles to this file, and also import other style files */
+$break-tiny: 550px;
+$break-sm: 768px;
+$break-md: 1200px;
+$break-lg: 1600px;
+
+$padding-none:    0px;
+$padding-tiny:    2px;
+$padding-small:   5px;
+$padding-medium:  15px;
+$padding-large:   25px;
+$padding-xlarge:  35px;
+
+$font-heading: 2rem;
+$font-subheading: 1.7rem;
+$font-body: 1rem;
+$font-footnote: 0.75rem;
+
+$border-radius-small: 5px;
+
+$column-gap: $padding-tiny;
+$row-gap: $padding-tiny;
+
+$color-background-default: #efefef;
+$color-background-navbar: #383838;
+$color-background-card: lightgray;
+
+$color-font-default: darkslategray;
+$color-font-navbar: silver;
+$color-font-card: darkslateblue;
+
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  color: $color-font-default;
+  font-family: 'Open Sans', sans-serif;
+
+  display: grid;
+  grid-column-gap: $column-gap;
+  grid-row-gap: $row-gap;
+  margin: 0;
+
+  background-image: url('src/assets/images/app/cartographer.png');
+  background-repeat: repeat;
+}
+
+.card {
+  border-radius: $border-radius-small;
+  margin: $padding-small;
+  padding: $padding-small;
+
+  background-color: $color-background-card;
+  color: $color-font-card;
+}
+
+.pulsing {
+    opacity: 0;
+}
+
+/* Sourced from https://stackoverflow.com/a/14448027 with modifications */
+
+.arrow, .arrow:before, .arrow:after {
+  width: 5em;
+  height: 5em;
+}
+.arrow {
+	overflow: hidden;
+	position: relative;
+	margin: 7em auto 0;
+	border-radius: 20%;
+	transform: translateY(50%) rotate(30deg) skewY(30deg) scaleX(.866);
+	pointer-events: none;
+}
+.arrow:before, .arrow:after {
+	position: absolute;
+  background: #ababab;
+	pointer-events: auto;
+	content: '';
+}
+.arrow:before {
+	border-radius: 20% 20% 20% 53%;
+	transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%)
+			skewX(30deg) scaleY(.866) translateX(-24%);
+}
+.arrow:after {
+	border-radius: 20% 20% 53% 20%;
+	transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%)
+			skewX(-30deg) scaleY(.866) translateX(24%);
+}
+
+// Mobile-only
+@media only screen and (max-width: $break-sm) {
+
+}
+
+// Tablet
+@media only screen and (max-width: $break-md) {
+
+}
+
+// Desktop
+@media only screen and (max-width: $break-md) {
+
+}
+
+/* END */
+
+#dots {
+  padding-top: 30px;
+}
+
+#dots .dot {
+  background: #ababab;
+  border-radius: 30px;
+}
+
+#dots div {
+  margin: auto;
+  margin-top: 20px;
+  width: 30px;
+  height: 50px;
+}
+
+#arrow_head {
+  margin: auto;
+  margin-top: -80px;
+
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+// Animations
+
+.pulsing.fade1 {
+  animation: fade1 2.5s linear forwards;
+  -o-animation: fade1 2.5s linear forwards;
+  -moz-animation: fade1 2.5s linear forwards;
+  -webkit-animation: fade1 2.5s linear forwards;
+
+  animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+.pulsing.fade2 {
+  animation: fade2 2.5s linear forwards;
+  -o-animation: fade2 2.5s linear forwards;
+  -moz-animation: fade2 2.5s linear forwards;
+  -webkit-animation: fade2 2.5s linear forwards;
+
+  animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+.pulsing.fade3 {
+  animation: fade3 2.5s linear forwards;
+  -o-animation: fade3 2.5s linear forwards;
+  -moz-animation: fade3 2.5s linear forwards;
+  -webkit-animation: fade3 2.5s linear forwards;
+
+  animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes showHide {
+    0% { width: 100% }
+  100% { width: 0% }
+}
+@-moz-keyframes showHide { /* FF */
+    0% { width: 100% }
+  100% { width: 0% }
+}
+@-webkit-keyframes showHide { /* Chrome, Safari */
+    0% { width: 100% }
+  100% { width: 0% }
+}
+
+@keyframes fade1 {
+  0%, 80% { opacity: 0 }
+  40% { opacity: 1 }
+}
+@-moz-keyframes fade1 { /* Firefox */
+  0%, 80% { opacity: 0 }
+  40% { opacity: 1 }
+}
+@-webkit-keyframes fade1 { /* Safari and Chrome */
+  0%, 80% { opacity: 0 }
+  40% { opacity: 1 }
+}
+
+@keyframes fade2 {
+  0%, 10%, 90% { opacity: 0 }
+  50% { opacity: 1 }
+}
+@-moz-keyframes fade2 { /* Firefox */
+  0%, 10%, 90% { opacity: 0 }
+  50% { opacity: 1 }
+}
+@-webkit-keyframes fade2 { /* Safari and Chrome */
+  0%, 10%, 90% { opacity: 0 }
+  50% { opacity: 1 }
+}
+
+@keyframes fade3 {
+  0%, 20%, 100% { opacity: 0 }
+  60% { opacity: 1 }
+}
+@-moz-keyframes fade3 { /* Firefox */
+  0%, 20%, 100% { opacity: 0 }
+  60% { opacity: 1 }
+}
+@-webkit-keyframes fade3 { /* Safari and Chrome */
+  0%, 20%, 100% { opacity: 0 }
+  60% { opacity: 1 }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@-moz-keyframes fadein { /* Firefox */
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

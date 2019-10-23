@@ -1,0 +1,91 @@
+@import "src/styles.scss";
+@import url(//fonts.googleapis.com/css?family=Quicksand);
+
+.navbar {
+  background-color: $color-background-navbar;
+  color: $color-font-navbar;
+
+  display: flex;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.navbar-icon {
+  min-width: 50px;
+  width: 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+
+    border: 7px solid azure;
+    border-left: 0px;
+    border-radius: 0px 15px 0px 15px;
+    border-color: azure azure #1E90FF azure;
+
+    height: 15px;
+    width: 15px;
+  }
+
+  .icon:hover {
+    background: #00BFFF;
+    border-radius: 0px 20px 0px 20px;
+
+    box-shadow:0 0 50px #00BFFF;
+    -moz-box-shadow: 0 0 50px #00BFFF;
+    -webkit-box-shadow:0 0 50px #00BFFF;
+
+    padding: 5px;
+  }
+}
+
+.navbar-tag {
+  width: 25%;
+  font-size: $font-heading;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: 15px;
+}
+
+.navbar-center {
+  transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -webkit-transition: all 0.15s ease-in-out;
+
+  width: 100%;
+  opacity: 1;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: $padding-medium;
+  font-size: $font-footnote;
+}
+
+.navbar-options {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: $padding-medium $padding-small $padding-medium $padding-medium;
+}
+
+// Collapsed view
+@media only screen and (max-width: $break-sm) {
+  // Do not display fun text on small screens
+  .navbar-center {
+    font-size: 0;
+    opacity: 0;
+  }
+}
