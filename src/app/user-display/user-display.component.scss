@@ -2,7 +2,11 @@
 @import url(//fonts.googleapis.com/css?family=Quicksand);
 
 .user-display {
+  height: 100%;
+  // padding-right: $padding-medium;
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .user-icon {
@@ -33,10 +37,55 @@
 }
 
 .user-link {
+  height: 100%;
+  padding-right: $padding-medium;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.user-link:hover .dropdown-menu {
+  display: block;
+}
+
 .dropdown-menu {
+  display: none;
+  background: $color-background-navbar;
+  width: 200px;
+  right: 0px;
+
+  margin-top: $height-navbar + $padding-small;
+  position: absolute;
+
+  .dropdown-row {
+    transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+
+    display: grid;
+    grid-template-columns: 20% 80%;
+    padding: $padding-small $padding-medium $padding-small $padding-medium;
+
+    .img {
+      text-align: right;
+      padding-right: $padding-medium;
+    }
+    .component {
+      text-align: center;
+    }
+  }
+
+  .dropdown-row:hover {
+    background: lighten($color-background-navbar, 10%);
+  }
+}
+
+div.dropdown-menu > div:nth-of-type(odd) {
+  background: darken($color-background-navbar, 5%);
+}
+
+.dropdown-menu:hover {
+  display: block;
 }
