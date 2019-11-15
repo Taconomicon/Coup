@@ -24,22 +24,22 @@
     -moz-transition: all .15s ease-in;
     -webkit-transition: all .15s ease-in;
 
-    border: 7px solid azure;
+    border: 7px solid $color-icon-white;
     border-left: 0px;
     border-top: 0px;
     border-radius: 0px 15px 0px 15px;
     // border-color: azure azure #1E90FF azure;
-    border-color: azure azure azure azure;
+    border-color: $color-icon-white;
 
     height: 15px;
     width: 15px;
   }
 
   .icon:hover {
-    background: #00BFFF;
-    box-shadow:0 0 50px #00BFFF;
-    -moz-box-shadow: 0 0 50px #00BFFF;
-    -webkit-box-shadow:0 0 50px #00BFFF;
+    background: $color-icon-blue;
+    box-shadow:0 0 50px $color-icon-blue;
+    -moz-box-shadow: 0 0 50px $color-icon-blue;
+    -webkit-box-shadow:0 0 50px $color-icon-blue;
     border-radius: 0px 20px 0px 20px;
     padding: 5px;
   }
