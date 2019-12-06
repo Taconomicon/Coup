@@ -1,0 +1,97 @@
+@import "src/styles.scss";
+@import url(//fonts.googleapis.com/css?family=Quicksand);
+
+.user-display {
+  height: 100%;
+  // padding-right: $padding-medium;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.user-icon {
+  transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+
+  // Default image
+  border-radius: 30px;
+  background-image: url("src/assets/images/avatars/avatar.png");
+
+  img {
+    border-radius: 30px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: $padding-small;
+}
+
+.user-icon:hover {
+  box-shadow:0 0 50px azure;
+  -moz-box-shadow: 0 0 50px azure;
+  -webkit-box-shadow:0 0 50px azure;
+}
+
+.user-link, .login {
+  height: 100%;
+  padding-right: $padding-medium;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-link:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  background: $color-background-navbar;
+  width: 200px;
+  right: 0px;
+
+  margin-top: $height-navbar + $padding-small;
+  position: absolute;
+
+  .dropdown-row {
+    transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+
+    display: grid;
+    grid-template-columns: 20% 80%;
+    padding: $padding-small $padding-medium $padding-small $padding-medium;
+
+    .img {
+      text-align: right;
+      padding-right: $padding-medium;
+    }
+    .component {
+      text-align: center;
+    }
+  }
+
+  .dropdown-row:hover {
+    background: lighten($color-background-navbar, 10%);
+  }
+}
+
+div.dropdown-menu > div:nth-of-type(odd) {
+  background: darken($color-background-navbar, 5%);
+}
+
+.dropdown-menu:hover {
+  display: block;
+}
+
+.login {
+  a {
+    color: lightgray;
+  }
+}

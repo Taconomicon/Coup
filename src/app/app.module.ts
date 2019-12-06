@@ -1,23 +1,43 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { UserDisplayComponent } from './user-display/user-display.component';
-import { DotsComponent } from './dots/dots.component';
+import { BackendProviderMock } from './_mocks';
+import { JwtInterceptor } from './_interceptors';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  RegisterComponent,
+  NavbarComponent,
+  UserDisplayComponent,
+  DotsComponent,
+  LoginComponent,
+  ThreadsComponent,
+  AlertComponent,
+} from './components';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AlertComponent,
     NavbarComponent,
     UserDisplayComponent,
-    DotsComponent
+    DotsComponent,
+    LoginComponent,
+    RegisterComponent,
+    ThreadsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    BackendProviderMock
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -36,7 +36,7 @@
   -webkit-box-shadow:0 0 50px azure;
 }
 
-.user-link {
+.user-link, .login {
   height: 100%;
   padding-right: $padding-medium;
 
@@ -88,4 +88,10 @@ div.dropdown-menu > div:nth-of-type(odd) {
 
 .dropdown-menu:hover {
   display: block;
+}
+
+.login {
+  a {
+    color: lightgray;
+  }
 }

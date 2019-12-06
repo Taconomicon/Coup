@@ -7,15 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'Coup';
-  dotsActive = false;
-  dotsActive_2 = false;
 
   ngOnInit() {}
-
-  toggleDots() {
-    this.dotsActive = !this.dotsActive;
-    setTimeout(() => {
-      this.dotsActive_2 = !this.dotsActive_2;
-    }, 700);
-  }
 }

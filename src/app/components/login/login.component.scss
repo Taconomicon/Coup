@@ -1,0 +1,17 @@
+@import "src/styles.scss";
+
+// Mobile-only
+@media only screen and (max-width: $break-sm) {}
+
+// Tablet
+@media only screen and (min-width: $break-sm + 1) {}
+
+// Tablet-only
+@media only screen and (min-width: $break-sm + 1) and (max-width: $break-md) {}
+
+// Desktop
+@media only screen and (min-width: $break-md) {
+    // .login-card {
+    //     max-width: 50%;
+    // }
+}

@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./dots.component.scss']
 })
 export class DotsComponent implements OnInit {
-  private _active: Boolean;
-  private _arrow: Boolean;
+  private _active: boolean;
+  private _arrow: boolean;
 
   private elementIds = [];
 
@@ -18,12 +18,12 @@ export class DotsComponent implements OnInit {
   }
 
   @Input()
-  set arrow(arrow: Boolean) {
+  set arrow(arrow: boolean) {
     this._arrow = arrow;
   }
 
   @Input()
-  set active(active: Boolean) {
+  set active(active: boolean) {
     this._active = active;
     if (this.elementIds.length > 0) {
       this.toggle();

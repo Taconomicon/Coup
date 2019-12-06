@@ -1,0 +1,22 @@
+<div class="user-display">
+  <ng-container *ngIf='user'>
+    <a href="./" class="user-icon">
+      <img src="assets/images/avatars/avatar.png" alt="Avatar" height="30" width="30">
+    </a>
+    <div class="user-link">{{user.username}}
+      <div class="dropdown-menu">
+        <div class="dropdown-row">
+          <div class="img">1</div><div class="component">Account Settings</div>
+        </div>
+        <div class="dropdown-row" (click)="logout();">
+          <div class="img">2</div><div class="component">Log Out</div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf='!user'>
+    <div class="login">
+      <a href="./login">Log In</a>
+    </div>
+  </ng-container>
+</div>
