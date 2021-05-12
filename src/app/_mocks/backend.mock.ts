@@ -45,10 +45,10 @@ export class BackendMock implements HttpInterceptor {
         }
 
         function register() {
-            const user = body;
+            const user: User = body;
 
-            if (users.find((account: User) => account.username === account.username)) {
-                return error('Sorry, the username "' + user.username + '" is already taken :(');
+            if (users.find((account: User) => user.username === account.username)) {
+                return error('Sorry, the username "' + user.username + '" is already taken.');
             }
 
             user.id = users.length ? Math.max(...users.map((account: User) => account.id)) + 1 : 1;

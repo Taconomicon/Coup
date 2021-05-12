@@ -1,5 +1,14 @@
 @import "src/styles.scss";
 
+.alert-list {
+    position: absolute;
+
+    top: $height-navbar;
+    right: 0;
+    bottom: auto;
+    left: auto;
+}
+
 .alert {
     border-radius: $border-radius-small;
     margin: $padding-small;
@@ -7,12 +16,22 @@
   
     background-color: $color-background-card;
     color: black;
+
+    grid-template-columns: [alert-close] [alert-message];
 }
 
 .alert-success {
-    background-color: lightgreen;
+    border: 1px solid rgb(69, 179, 69);
 }
 
 .alert-danger {
-    background-color: lightsalmon;
+    border: 1px solid rgb(189, 74, 74);
+}
+
+.alert-close {
+    float: right;
+    width: 1rem;
+    text-align: center;
+
+    cursor: pointer;
 }

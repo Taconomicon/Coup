@@ -1,8 +1,15 @@
-<div
-    *ngIf="alert" 
-    [ngClass]="{ 
-        'alert': message, 
-        'alert alert-success': alert.success === true, 
-        'alert alert-danger': alert.success === false }">
-    {{alert.message}}
+<div class="alert-list">
+    <ng-container *ngIf="alertList.length">
+        <div 
+            [@alertAnimation]
+            *ngFor="let id of alertList" 
+            [ngClass]="{ 
+                'alert': message, 
+                'alert alert-success': alerts[id].success === true, 
+                'alert alert-danger': alerts[id].success === false }"
+                >
+            <div class="alert-close" (click)='dismiss(id)'>X</div>
+            <p>{{alerts[id].message}}</p>
+        </div>
+    </ng-container>
 </div>

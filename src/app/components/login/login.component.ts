@@ -3,11 +3,24 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { AlertService, AuthenticationService } from 'src/app/_services';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
     selector: 'login',
     templateUrl: './login.component.html',
-    styleUrls: ['./login.component.scss']
+    styleUrls: ['./login.component.scss'],
+    animations: [
+        trigger('fadeInOut', [
+          transition(':enter', [
+            style({opacity: 0 }),
+            animate('0.3s ease-in', style({opacity: '1'}))
+          ]) ,
+          transition(':leave', [
+            style({opacity: 1}),
+            animate('0.3s ease-out', style({opacity: '0'}))
+          ])
+        ])
+      ]
 })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
@@ -57,7 +70,7 @@ export class LoginComponent implements OnInit {
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    console.log('Error recieved:', error.error);
+                    console.error('Error recieved from auth service:', error.error);
                     this.alertService.error(error.error.message);
                     this.loading = false;
                 });

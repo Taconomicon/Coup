@@ -101,8 +101,9 @@ button:after {
   width: 100%;
   height: 100%;
 
-  margin-top: -5px;
-  margin-left: -43px;
+  top: 0;
+  right: 0;
+  left: 0;
 
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
@@ -147,7 +148,6 @@ hr {
 .form {
   .form-input:last-child {
     padding-bottom: 100px;
-    background: red;
   }
 }
 
@@ -169,16 +169,15 @@ hr {
 
   label {
     min-width: 100px;
-    padding-top: 0.2rem;
+    padding-top: 0.3rem;
   }
 
   input {
-    padding: 0 1% 0 1%;
     min-width: 98%;
   }
 
   .invalid {
-    background: black;
+    color: lightsalmon;
   }
 }
 
@@ -187,6 +186,31 @@ hr {
 
   display: flex;
   justify-content: space-around;
+}
+
+.loading-button {
+  button {
+    display: inline-block;
+    padding-right: 5px;
+  }
+
+  img {
+    display: inline-block;
+  }
+}
+
+.loading-wrapper {
+  padding: 2px 0 0 5px;
+}
+
+.loading {
+  content:url("data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==");
+}
+
+form label.required:after
+{
+    color: lightcoral;
+    content: " *";
 }
 
 // Mobile-only
@@ -210,19 +234,4 @@ hr {
 @media only screen and (min-width: $break-sm + 1) and (max-width: $break-md) {}
 
 // Desktop
-@media only screen and (min-width: $break-md) {
-  .form-input {
-    display: grid-template;
-    grid-template-columns: [form_label] 120px [form_input] 30%;
-
-    label {
-      text-align: right;
-      padding-right: 20px;
-      grid-area: form_label;
-    }
-
-    input {
-      grid-area: form_input;
-    }
-  }
-}
+@media only screen and (min-width: $break-md) {}
