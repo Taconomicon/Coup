@@ -11,27 +11,61 @@
 
 .alert {
     border-radius: $border-radius-small;
-    margin: $padding-small;
+
+    min-width: 5rem;
+    max-width: 15rem;
+    
+    margin: $padding-medium;
     padding: $padding-small;
   
-    background-color: $color-background-card;
+    background-color: $color-background-card-light;
     color: black;
 
-    grid-template-columns: [alert-close] [alert-message];
+    grid-template-columns: [alert-icon] [alert-message] [alert-close];
 }
 
-.alert-success {
-    border: 1px solid rgb(69, 179, 69);
+.alert-header {
+    display: flex;
+    justify-content: space-between;
 }
 
-.alert-danger {
-    border: 1px solid rgb(189, 74, 74);
+.alert-header-item {
+    width: 1rem;
+    text-align: center;
+}
+
+.alert-header-divider {
+    content: ' ';
+
+    height: 0.05rem;
+
+    background-color: gray;
+
+    margin-left: 1.25rem;
+    margin-right: 0.25rem;
+    margin-top: -0.15rem;
+}
+
+.alert-success::before {
+    content: '✓';
+    color: rgb(69, 179, 69);
+}
+
+.alert-danger::before {
+    content: '!';
+    color: rgb(189, 74, 74);
+}
+
+.alert-message {
+    padding: 0.25rem;
+    padding-right: 0.1rem;
+    
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
 }
 
 .alert-close {
-    float: right;
-    width: 1rem;
-    text-align: center;
+    font-size: 0.5rem;
 
     cursor: pointer;
 }
