@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AuthenticationService, UserService } from 'src/app/_services';
+import { AlertService, AuthenticationService, UserService } from 'src/app/_services';
 import { User } from 'src/app/_models';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
@@ -17,11 +17,20 @@ export class UserDisplayComponent implements OnInit, OnDestroy {
   constructor(
     private readonly router: Router,
     private authenticationService: AuthenticationService,
+    private alertService: AlertService,
     private userService: UserService
   ) {
     this.userSub = this.authenticationService.currentUser.subscribe((user: User) => {
       this.user = user;
     });
+  }
+
+  mysteryBox() {
+    if (new Date().getMilliseconds) {
+      this.alertService.error('Lose!');
+    } else {
+      this.alertService.success('Win!');
+    }
   }
 
   logout() {

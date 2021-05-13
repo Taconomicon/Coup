@@ -51,18 +51,22 @@
 
 .dropdown-menu {
   display: none;
-  background: $color-background-navbar;
   width: 200px;
-  right: 0px;
-
-  margin-top: $height-navbar + $padding-small;
+  
+  background: $color-background-navbar;
+  
   position: absolute;
 
+  top: $height-navbar;
+  right: 0px;
+  
   .dropdown-row {
     transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
     -moz-transition: all .2s ease-in;
     -webkit-transition: all .2s ease-in;
+
+    cursor: pointer;
 
     display: grid;
     grid-template-columns: 20% 80%;
@@ -71,9 +75,12 @@
     .img {
       text-align: right;
       padding-right: $padding-medium;
+      border-radius: 30px;
+      background-color: whitesmoke;
     }
     .component {
-      text-align: center;
+      margin-left: $padding-small;
+      text-align: left;
     }
   }
 
