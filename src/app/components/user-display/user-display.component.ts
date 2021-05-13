@@ -26,7 +26,7 @@ export class UserDisplayComponent implements OnInit, OnDestroy {
   }
 
   mysteryBox() {
-    if (new Date().getMilliseconds) {
+    if (new Date().getMilliseconds() % 2) {
       this.alertService.error('Lose!');
     } else {
       this.alertService.success('Win!');
